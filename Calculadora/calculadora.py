@@ -1,5 +1,4 @@
 
-
 operador = input("Escolha: + - / x ")
 num_1 = input("Digite o primeiro numero: ")
 num_2 = input("Digite o segundo numero: ")
