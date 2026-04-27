@@ -65,11 +65,13 @@ Tag do jogador:
 
 ## Exemplo de OutPut
 
-`Usuario:` TenZ#NA1
-`Rank Atual:` Radiante
-`Peak Rank:` Radiante
-`MMR Ultimo Jogo:` +25
-`MMR Atual:` 90
+```bash
+Usuario: TenZ#NA1
+Rank Atual: Radiante
+Peak Rank: Radiante
+MMR Último Jogo: +25
+MMR Atual: 90
+```
 
 ---
 
