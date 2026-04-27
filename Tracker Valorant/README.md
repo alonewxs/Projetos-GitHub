@@ -1,6 +1,6 @@
 # Valorant Tracker
 
-Um script simples em Python que consulta informações de rank de um jogador de Valorant usando uma API externa.
+Um script em Python que consulta informações de rank de um jogador de Valorant usando uma API externa, exibindo informações sobre seu rank no Competitivo e seu MMR.
 
 Ele mostra os dados citados abaixo:
 
@@ -45,7 +45,7 @@ Depois disso, ele faz uma requisição para a API e retorna os dados formatados 
 ## Onde pegar a API Key?
 
 Você pode obter sua API Key na API do HenrikDev.
-Link: `https://api.henrikdev.xyz/dashboard/`
+Acesse: https://api.henrikdev.xyz/dashboard/
 
 ---
 
@@ -53,7 +53,9 @@ Link: `https://api.henrikdev.xyz/dashboard/`
 
 Clone o repositório e execute:
 
+```bash
 python main.py
+```
 
 Depois responda as perguntas:
 
