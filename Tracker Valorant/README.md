@@ -77,9 +77,11 @@ MMR Atual: 90
 
 ## Estrutura do projeto
 
+```bash
 Tracker-Valorant/
-│── `main.py`
-│── `.env`
-└── `README.md`
+│── main.py
+│── .env
+└── README.md
+```
 
 ---
