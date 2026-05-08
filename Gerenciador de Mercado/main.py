@@ -31,6 +31,25 @@ def salvar_dados(dados):
 # ================================================================= #
 
 
+# ========================= LOGIN ( FUNCIONARIO OU CLIENTE ) PRODUTOS ========================== #
+
+print("Deseja entra como? \n[1] Gerente \n[2] Cliente ")
+cargo = input("")
+
+try:
+    cargo = int(cargo)
+except ValueError:
+    print("Digite apenas, 1 ou 2")
+
+if cargo == 1:
+    os.system("cls")
+    print("Seja bem vindo(a) ao painel de Login Administrativo")
+    time.sleep(0.5)
+    print("Faça Login/Registo")
+    print("\n[1] Login \n[2] Registro\n")
+    user_login = input("")
+else:
+    os.system("cls")
 
 # ========================= ADD/REM PRODUTOS ========================== #
 
