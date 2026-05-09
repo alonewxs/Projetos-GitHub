@@ -40,12 +40,14 @@ def salvar_dados(dados):
 # ========================= ADD/REM PRODUTOS ========================== #
 
 def adicionar_produto(estoque):
-    nome = input("Nome do produto: ").lower().strip()
-    preco = input("Preço: ")
-    quantidade = input("Quantidade: ")
-
+    # nome = input("Nome do produto: ").lower().strip()
+    # preco = input("Preço: ")
+    # quantidade = input("Quantidade: ")
 
     while True:
+        nome = input("Nome do produto: ").lower().strip()
+        preco = input("Preço: ")
+        quantidade = input("Quantidade: ")
         try:
             preco_float = float(preco.replace(",", "."))
             break
@@ -58,6 +60,7 @@ def adicionar_produto(estoque):
             break
         except ValueError:
             print("Digite um numero para estoque valido, EX: 5")
+            continue
 
 
     for i in estoque:
@@ -163,7 +166,7 @@ def menu():
 
 cargo = input("Deseja entra como? \n[1] Gerente \n[2] Cliente\n")
 
-ask_user = ""
+login_regist = ""
 
 try:
     cargo = int(cargo)
@@ -176,13 +179,13 @@ if cargo == 1:
     time.sleep(0.5)
     print("Faça Login/Registo")
     print("\n[1] Login \n[2] Registro\n")
-    ask_user = input("")
+    login_regist = input("")
 
-    login_regist = ask_user
 
 elif cargo == 2:
     os.system("cls")
     menu()
+    exit()
     
 while True:
     if login_regist == "1":
