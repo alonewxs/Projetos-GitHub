@@ -14,6 +14,13 @@ import os
 
 ESTOQUE = os.path.join(os.path.dirname(__file__), "estoque.json")
 
+USER_GERENTE = "Admin"
+SENHA_GERENTE = "Admin54321"
+
+CODIGO_FUNCIONARIO = "554221"
+
+USER_REGISTRO = ""
+SENHA_REGISTRO = ""
 
 # =============== SO SOBRE O ARQUIVO EM JSON ====================== #
 
@@ -29,27 +36,6 @@ def salvar_dados(dados):
         json.dump(dados, f, indent=4, ensure_ascii=False)
 
 # ================================================================= #
-
-
-# ========================= LOGIN ( FUNCIONARIO OU CLIENTE ) PRODUTOS ========================== #
-
-print("Deseja entra como? \n[1] Gerente \n[2] Cliente ")
-cargo = input("")
-
-try:
-    cargo = int(cargo)
-except ValueError:
-    print("Digite apenas, 1 ou 2")
-
-if cargo == 1:
-    os.system("cls")
-    print("Seja bem vindo(a) ao painel de Login Administrativo")
-    time.sleep(0.5)
-    print("Faça Login/Registo")
-    print("\n[1] Login \n[2] Registro\n")
-    user_login = input("")
-else:
-    os.system("cls")
 
 # ========================= ADD/REM PRODUTOS ========================== #
 
@@ -117,7 +103,7 @@ def remover_produto(estoque):
 
 def listar_produtos(estoque):
     if not estoque:
-        print("Este produto não esta em estoque. Caso seja um manager adicione o produto no estoque para vender!!")
+        print("Não tem produto em estoque. Caso seja um Gerente adicione o produto no estoque para vender!!")
         return
 
     os.system("cls")
@@ -172,4 +158,59 @@ def menu():
         else:
             print("[red]Opção inválida![/]")
 
+
+# ========================= LOGIN ( FUNCIONARIO OU CLIENTE ) PRODUTOS ========================== #
+
+cargo = input("Deseja entra como? \n[1] Gerente \n[2] Cliente\n")
+
+ask_user = ""
+
+try:
+    cargo = int(cargo)
+except ValueError:
+    print("Digite apenas, 1 ou 2") 
+
+if cargo == 1:
+    os.system("cls")
+    print("Seja bem vindo(a) ao painel de Login Administrativo")
+    time.sleep(0.5)
+    print("Faça Login/Registo")
+    print("\n[1] Login \n[2] Registro\n")
+    ask_user = input("")
+
+    login_regist = ask_user
+
+elif cargo == 2:
+    os.system("cls")
+    menu()
+    
+while True:
+    if login_regist == "1":
+        user = input("Qual Usuario: ")
+        senha = input("Qual Senha: ")
+
+        if user == USER_GERENTE and senha == SENHA_GERENTE:
+            print("Login feito com Sucesso!!")
+            os.system("cls")
+            break
+        else:
+            print("Usuario ou Senha incorreto!!")
+            os.system("cls")
+            continue
+    else:
+        os.system("cls")
+        ask_codigo = input("Qual codigo de Funcionario? ")
+        if ask_codigo == CODIGO_FUNCIONARIO:
+            USER_REGISTRO = input("Qual Usuario para Registro? ")
+            SENHA_REGISTRO = input("Qual Senha para Registro? ")
+            os.system("cls")
+            time.sleep(1)
+            print("Usuario Cadstrado")
+        else:
+            print("Codigo de Funcionario incorreto!")
+            continue
+        break
+        
+
 menu()
+           
