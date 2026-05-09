@@ -8,28 +8,28 @@ load_dotenv()
 
 
 lista = {
-    "1": "EUR",
-    "2": "BRL",
-    "3": "CHF",
-    "4": "JPY",
-    "5": "GBP",
-    "6": "CNY",
+    "1": {"sigla": "EUR", "nome": "Euro"},
+    "2": {"sigla": "BRL", "nome": "Real Brasileiro"},
+    "3": {"sigla": "CHF", "nome": "Franco Suíço"},
+    "4": {"sigla": "JPY", "nome": "Iene Japonês"},
+    "5": {"sigla": "GBP", "nome": "Libra Esterlina"},
+    "6": {"sigla": "CNY", "nome": "Yuan Chinês"},
+    "7": {"sigla": "USD", "nome": "Dólar Americano"},
+    "8": {"sigla": "AED", "nome": "Dirham dos Emirados"},
+    "9": {"sigla": "AUD", "nome": "Dólar Australiano"},
 }
-
 
 os.system("cls")
 
+for num, dados in lista.items(): ## enumera e mostra o nome de cada moeda
+    print(f"[{num}] {dados['sigla']} - {dados['nome']}")
 
-for num, nome in lista.items(): ## enumera e mostra o nome de cada moeda
-    print(f"[{num}] {nome}")
+moeda_base = input("Qual moeda base você deseja utilizar? Escolha um numero:")
+moeda_convertida = input("Qual moeda que você deseja ver quanto ficara? Escolha um numero:")
 
-moeda_base = input("Qual moeda base você deseja utilizar? Escolha um numero:  ")
-moeda_convertida = input("Qual moeda que você deseja ver quanto ficara? Escolha um numero:  ")
-# pergunta = input("Escolha um numero de acordo com a moeda que deseja converter: ") ## vai selecionar alguma da lista pra dar o resultado
-
-if moeda_base in lista: ## verifica se a resposta da pergunta existe na lista
-    moeda = lista[moeda_base] ## moeda base
-    moeda2 = lista[moeda_convertida] ## moeda convertida
+if moeda_base in lista and moeda_convertida in lista: ## verifica se a resposta da pergunta existe na lista
+    moeda = lista[moeda_base]["sigla"] ## moeda base
+    moeda2 = lista[moeda_convertida]["sigla"] ## moeda convertida
 
 
     API_KEY = os.getenv("API_KEY")
@@ -44,7 +44,6 @@ if moeda_base in lista: ## verifica se a resposta da pergunta existe na lista
 
     conversao = data["conversion_rates"][moeda2] ## isso pega a taxa de conversão de acordo com a URL
     convertido = conversao * pergunta_3
-    # moeda_taxa = convertido / conversao
 
 
     os.system("cls")
@@ -54,7 +53,7 @@ if moeda_base in lista: ## verifica se a resposta da pergunta existe na lista
     os.system("cls")
 
     print("Convertendo...")
-    
+
     time.sleep(1)
 
     os.system("cls")
