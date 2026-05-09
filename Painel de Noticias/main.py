@@ -47,6 +47,7 @@ else:
               news_desc = int(input("Qual noticia deseja ver a descrição? Digite o numero da noticia: "))
 
               if 1 <= news_desc <= 5:
+                  os.system("cls")
                   print(base[news_desc - 1]["description"] or "Descrição não disponivel")
                   break
               else:
